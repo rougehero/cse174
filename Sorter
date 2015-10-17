@@ -1,0 +1,62 @@
+import java.util.*;
+import java.util.Arrays;
+
+public class Sorter {
+
+	public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.print("How many integers would you like to enter? ");
+	int numInts = sc.nextInt();
+	System.out.println("Enter integers: ");
+	ArrayList<Integer> list = new ArrayList<Integer>();
+	int x =0;
+	for (int i = 0; i<numInts; i++) {
+		
+		x = sc.nextInt();
+		list.add(x);
+		}
+	
+	int y = 0;
+	ArrayList<Integer> sortedList = new ArrayList<Integer>();
+	ArrayList<Integer> originalList = new ArrayList<Integer>();
+	
+	for(int yy = 0; yy < list.size(); yy++) {
+		
+		originalList.add(list.get(yy));
+		
+		}
+	
+	for(int k = 0; k < numInts; k++) {
+		y = getSmallest(list);
+		sortedList.add(y);
+		}
+	
+	System.out.print(originalList.toString());
+	
+	System.out.println("");
+	
+	System.out.print(sortedList.toString());
+		
+	}
+	public static int getSmallest(ArrayList<Integer> list) {
+	
+	int j, bb, marker;
+	marker = 0;
+	j = list.get(0);
+	
+	for(int y = 0; y < list.size(); y++) {
+	
+	bb = list.get(y);
+	
+		if(bb < j) {
+			
+			j = list.get(y);
+			marker = y;
+			}
+	}
+	list.remove(marker);
+	return j;
+		}
+	
+}
