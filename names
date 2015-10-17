@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class names {
+
+	public static void main(String[] Args) throws FileNotFoundException {
+	
+	File myInputFile = new File("inputCastermere.txt");
+	Scanner sc = new Scanner(myInputFile);
+	PrintWriter ineOute = new PrintWriter("datMusicDoe.txt");
+	while(sc.hasNextLine()){
+		ineOute.println(sc.nextLine());
+		}
+	ineOute.close();
+	}
+}
