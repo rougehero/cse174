@@ -1,0 +1,26 @@
+public class MyAct
+{
+public static void main(String[] Args)
+	{
+	int max = 0;
+	int a = 42;
+	int b = 37;
+	int c = 23;
+	if (true)
+	{
+	max = a;
+	}
+	else
+	{
+	   if (false)
+	    {
+	    max = a;
+	    }
+	    else
+	    {
+	    max = c;
+	    }
+	}
+	System.out.println (max);
+	}
+}
