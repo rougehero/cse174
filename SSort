@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class SSort {
+
+	public static void main(String[] Args) {
+	ArrayList<Integer> a = new ArrayList<Integer>();
+	
+	a.add(42);
+	a.add(9);
+	a.add(390);
+	a.add(7);
+	a.add(3);
+	
+	System.out.println(a);
+	ssort(a);
+	System.out.println(a);
+	
+	
+	}
+	
+	public static void ssort(ArrayList<Integer> a) {
+	
+	int min;
+	int i, j;
+	for(i = 0; i<a.size(); i++) {
+		for(j=i; j<a.size(); j++) {
+		min = i;
+		if(a.get(i) < a.get(j)) {
+			min = j;
+			}
+			Collections.swap(a, min, j);
+		}
+	}
+	
+	}
+	
+}
