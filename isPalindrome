@@ -1,0 +1,13 @@
+import java.util.*;
+public class IsPalindrome
+{
+public static void main(String[] Args)
+	{
+	System.out.println ("Enter a word: ");
+	Scanner input = new Scanner(System.in);
+	String word = input.next();
+	//System.out.println (word);
+	if(word.charAt(0) == word.charAt(word.length()-1)
+	System.out.println("Begin matches end");
+	}
+}
