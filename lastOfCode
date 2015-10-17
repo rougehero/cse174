@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class lastOfCode {
+
+	public static void main(String[] Args) throws FileNotFoundException {
+	
+	File Origin = new File("theWorldSeed.txt");
+	Scanner velKoz = new Scanner(Origin);
+	PrintWriter Manet = new PrintWriter("theTruth.txt");
+	while(velKoz.hasNextLine()) {
+		Manet.println(velKoz.nextLine());
+		}
+	Manet.close();
+	}
+	
+}
