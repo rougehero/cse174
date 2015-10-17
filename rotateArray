@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class rotateArray {
+
+	public static void main(String[] Args) {
+	
+	Scanner sc = new Scanner(System.in);
+	int[] myArray;
+	int numInts;
+	System.out.print("How many integers would you like to enter? ");
+	numInts = sc.nextInt();
+	myArray = new int[numInts];
+	System.out.println ("Enter "+numInts+" integers one line at a time: ");
+	
+	for(int i =0; i < numInts; i++) {
+	myArray[i] = sc.nextInt();
+	}
+	
+	prettyPrint(myArray);
+	rotateOnce(myArray, numInts);
+	rotateOnce(myArray, numInts);
+	
+	}
+	
+	public static void rotateOnce(int[] anArray, int numInts) {
+	
+	int[] proxyArray = new int[numInts];
+	for(int k = 0; k < numInts; k++) {
+		proxyArray[k] = anArray[k];
+		}
+	
+	for(int i = 1; i < numInts; i++) {
+		anArray[i] = proxyArray[i-1];
+		}
+	anArray[0] = proxyArray[numInts-1];
+	prettyPrint(anArray);
+	
+	
+	}
+	
+	public static void prettyPrint(int[] someArray) {
+	
+	System.out.print(Arrays.toString(someArray));
+	System.out.println();
+	}
+	
+}
