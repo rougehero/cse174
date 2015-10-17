@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class countVowels {
+
+	public static void main(String[] Args) {
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a word: ");
+	String myWord = sc.next();
+	int n = numVowels(myWord);
+	System.out.println("the word " + myWord + " has " + n + " vowels");
+	
+	}
+	
+	public static int numVowels(String myWord) {
+	
+	int i = myWord.length();
+	int k = 0;
+	
+	for (int j=0; j<i; j++){
+	if (myWord.charAt(j)=='a')
+	k++;
+	else if (myWord.charAt(j)=='e')
+	k++;
+	else if (myWord.charAt(j)=='i')
+	k++;
+	else if (myWord.charAt(j)=='o')
+	k++;
+	else if (myWord.charAt(j)=='u')
+	k++;
+	else
+	k = k;
+	}
+	
+	return k;
+	}
+	
+
+}
