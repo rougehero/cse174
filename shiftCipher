@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class shiftCipher{
+
+	public static void main(String[] args){
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a secret phrase: ");
+	String secretPhrase = sc.nextLine();
+	System.out.println("Enter a right shift (between 1 and 25): ");
+	int shift = sc.nextInt();
+	
+	int k = secretPhrase.length();
+	String codedPhrase = "";
+	int letterNumber = 0;
+	char newLetter;
+	
+	for (int i = 0; i < k; i++){
+	letterNumber = (int)secretPhrase.charAt(i);
+		if (letterNumber == 32){
+		newLetter = (char) ' ';
+		}
+		else {
+		letterNumber += shift;
+		newLetter = (char)letterNumber;
+		}
+	codedPhrase += newLetter;
+	}
+	
+	System.out.println(codedPhrase);
+	
+	
+	}
+
+}
