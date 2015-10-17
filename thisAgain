@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class thisAgain {
+
+	public static void main(String[] args) throws FileNotFoundException{
+	
+	File myInputFile = new File ("inputCastermere.txt");
+	Scanner input = new Scanner(myInputFile);
+	PrintWriter myAudi = new PrintWriter("findMe.txt");
+	
+	while(input.hasNextLine()) {
+		
+		myAudi.println(input.nextLine());
+		}
+	myAudi.close();
+	}
+
+}
