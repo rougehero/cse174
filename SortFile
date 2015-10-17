@@ -1,0 +1,54 @@
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.io.PrintWriter;
+
+public class SortFile {
+
+	public static void main (String[] Args) throws FileNotFoundException {
+	
+	File myFile = new File("numbers.txt");
+	Scanner sc = new Scanner(myFile);
+	ArrayList<Double> a = new ArrayList<Double>();
+	
+	PrintWriter writer = new PrintWriter("numbers-sorted");
+	
+	
+	while (sc.hasNextDouble()) {
+	a.add(sc.nextDouble());
+	}
+	mySort(a);
+	System.out.println("");
+	
+	double tippy;
+	for(int f = 0; f < a.size(); f++) {
+	tippy = a.get(f);
+	String maybe = Double.toString(tippy);
+	writer.write(maybe);
+	writer.write("\t");
+	}
+	writer.close();
+	
+	}
+	
+	public static void mySwap(int i, double x, double y, ArrayList<Double> a) {
+	a.set(i, y);
+	a.set(i+1, x);
+	
+	}
+	
+	public static void mySort (ArrayList<Double> a) {
+	double x, y;
+	for(int l = 0; l < a.size(); l++) {
+	for(int i = 0; i < a.size()-1; i++) {
+	x = a.get(i);
+	y = a.get(i+1);
+	if(y<x) {
+		mySwap(i, x, y, a);
+		}
+	}
+	}
+	}
+	
+}
