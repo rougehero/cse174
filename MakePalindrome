@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class makePalindromeAgain {
+
+	public static void main(String[] Args) {
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter characters one at a time. When finished enter an empty string (hit enter/return): ");
+	System.out.println("");
+	ArrayList<Character> myArrayList = new ArrayList<Character>();
+	char next;
+	String nextChar = " ";
+	while(true) {
+	nextChar = sc.nextLine();
+	for(int i = 0; i < nextChar.length(); i++) {
+	  next = nextChar.charAt(i);
+	  myArrayList.add(next);
+	  }
+	if(nextChar.isEmpty()) {
+	break;
+	}
+	
+	}
+	String palindrome = makeWord(myArrayList);
+	System.out.println(palindrome);
+	}//end main
+	
+	public static String makeWord(ArrayList<Character> myArrayList) { 
+	
+	String word = "";
+	String newWord = "";
+		for(Character d: myArrayList) {
+	  
+			word = word + d;
+	  
+		}	
+		for(int i = word.length()-1; i >= 0; i--){
+			newWord += word.charAt(i);
+		}
+	newWord = newWord.toLowerCase().trim();
+	newWord = word+newWord.substring(0,newWord.length());
+    return newWord;	
+	}//end makeword
+	
+}//end class
